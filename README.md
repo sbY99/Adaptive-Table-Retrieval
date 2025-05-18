@@ -1,6 +1,6 @@
-# Retrieve Only Relevant Tables Whether Few or Many: Adaptive Table Retrieval for Text-to-SQL
+# Retrieve Only Relevant Tables Whether Few or Many: Adaptive Table Retrieval Method
 
-This repository contains the official implementation for the paper: *Retrieve Only Relevant Tables Whether Few or Many: Adaptive Table Retrieval for Text-to-SQL*.
+This repository contains the official implementation for the paper: *Retrieve Only Relevant Tables Whether Few or Many: Adaptive Table Retrieval Method*.
 
 ## Requirements
 
