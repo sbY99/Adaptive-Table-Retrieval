@@ -451,13 +451,13 @@ class ATRTrainer:
             self.accelerator.log(val_metrics)
             log_to_file("")
 
-            if avg_valid_loss < self.best_valid_loss:
-                self.best_valid_loss = avg_valid_loss
-                log_to_file(f"\n  Validation loss improved to {avg_valid_loss:.4f}")
-                # Save the best model
-                self.save_model("")
+            # save the model when the best performance is detected
+            if val_metrics["Perfect_recall"] > self.best_perfect_recall:
+                self.best_perfect_recall = val_metrics["Perfect_recall"]
+                log_to_file(f"  Validation Performance improved to {val_metrics['Perfect_recall']:.4f}")
+                self.save_model()
             else:
-                log_to_file(f"\n  Validation loss did not improve: {avg_valid_loss:.4f} / Best: {self.best_valid_loss:.4f}")
+                log_to_file(f"  Validation Performance did not improve: {val_metrics['Perfect_recall']:.4f} / Best: {self.best_perfect_recall:.4f}")
 
             
     def save_model(self, postfix=""):
