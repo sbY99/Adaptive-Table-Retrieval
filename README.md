@@ -47,9 +47,9 @@ ATR/
 │   ├── bird_test_contriever.jsonl    # Top-50 tables from Contriever (for re-ranking)
 │   └── spider2_contriever.jsonl      # Top-50 tables from Contriever (for re-ranking)
 ├── results/
-│   ├── contriever/  # ATR re-ranking results of top-50 tables retrieved by Contriever
-│   ├── uae/         # ATR re-ranking results of top-50 tables retrieved by UAE
-│   └── results.ipynb # Code for calculating retrieval metrics
+│   ├── contriever/                   # ATR re-ranking results of top-50 tables retrieved by Contriever
+│   ├── uae/                          # ATR re-ranking results of top-50 tables retrieved by UAE
+│   └── results.ipynb                 # Code for calculating retrieval metrics
 ├── scripts/
 │   ├── train.sh
 │   └── evaluate.sh
