@@ -1,7 +1,7 @@
 import torch
 from torch.utils.data import Dataset, DataLoader
 from transformers import AutoTokenizer
-from utils import log_to_file,group_lists
+from utils import group_lists
 
 class ATRDataset(Dataset):
     def __init__(self, data_list, corpus_dict, tokenizer, max_length=2048, join_data={}):
@@ -121,7 +121,7 @@ def table_filter_collate_fn(batch, pad_token_id, max_length=2048, data_type="tra
         if seq_len > max_seq_len:
             input_ids = sample["input_ids"][:max_seq_len]
             attention_mask = sample["attention_mask"][:max_seq_len]
-            # thr_idx, tab_idx_list 도 clip 반영
+
             thr_idx = sample["thr_idx"] if sample["thr_idx"] < max_seq_len else (max_seq_len-1)
             tab_idx_list = [x for x in sample["tab_idx_list"] if x < max_seq_len]
 

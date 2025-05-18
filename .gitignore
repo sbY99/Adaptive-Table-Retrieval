@@ -4,3 +4,4 @@ wandb
 tmp
 *.log
 data/
+models/

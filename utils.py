@@ -187,13 +187,9 @@ def get_anchor_positive_triplet_mask(labels: Tensor) -> Tensor:
     Returns:
         mask: tf.bool `Tensor` with shape [batch_size, batch_size]
     """
-    # Check that i and j are distinct
-
     indices_equal = torch.eye(labels.size(0), device=labels.device).bool()
     indices_not_equal = ~indices_equal
 
-    # Check if labels[i] == labels[j]
-    # Uses broadcasting where the 1st argument has shape (1, batch_size) and the 2nd (batch_size, 1)
     labels_equal = labels.unsqueeze(0) == labels.unsqueeze(1)
 
     return labels_equal & indices_not_equal
@@ -205,9 +201,6 @@ def get_anchor_negative_triplet_mask(labels: Tensor) -> Tensor:
     Returns:
         mask: tf.bool `Tensor` with shape [batch_size, batch_size]
     """
-    # Check if labels[i] != labels[k]
-    # Uses broadcasting where the 1st argument has shape (1, batch_size) and the 2nd (batch_size, 1)
-
     return ~(labels.unsqueeze(0) == labels.unsqueeze(1))
 
 

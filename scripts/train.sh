@@ -34,6 +34,8 @@ echo "==================================="
 MODEL_SAVE_DIR="models/${experiment_id}"
 
 mkdir -p "tmp"
+mkdir -p "models"
+mkdir -p "results"
 
 CUDA_VISIBLE_DEVICES=0,1 accelerate launch \
   --config_file "$TRAIN_CONFIG" train.py \

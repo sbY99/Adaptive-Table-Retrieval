@@ -54,8 +54,8 @@ def main():
         data = read_jsonl(test_file)
         test_data_dict[key] = data
 
-    test_corpus_dict = merge_dicts(read_json("data/processed/spider-test-corpus-dict.json"), read_json("data/processed/bird-test-corpus-dict.json"))   
-    test_corpus_dict = merge_dicts(test_corpus_dict, read_json("data/processed/spider2-corpus-dict.json"))
+    test_corpus_dict = merge_dicts(read_json("data/meta/spider-test-corpus-dict.json"), read_json("data/meta/bird-test-corpus-dict.json"))   
+    test_corpus_dict = merge_dicts(test_corpus_dict, read_json("data/meta/spider2-corpus-dict.json"))
     for key, value in test_data_dict.items():
         if args.ood_data_name in key:
             test_dataset_dict[key] = ATRDataset(value, test_corpus_dict, tokenizer=tokenizer, max_length=args.max_length, join_data=[])
