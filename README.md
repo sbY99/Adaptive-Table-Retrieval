@@ -89,6 +89,7 @@ Run training with:
 bash scripts/train.sh
 ```
 
+Trained models will be saved in `./models/{experiment_id}`.
 
 ## Evaluation
 

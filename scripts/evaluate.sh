@@ -17,7 +17,9 @@ experiment_id="expr1" # Your Experiments ID
 MODEL_BEST_CHECKPOINT_DIR="models/${experiment_id}"
 OUTPUT_FILE_PATH="results/${experiment_id}.jsonl"
 
-mkdir -p "$(dirname "$OUTPUT_FILE_PATH")"
+mkdir -p "tmp"
+mkdir -p "models"
+mkdir -p "results"
 
 CUDA_VISIBLE_DEVICES=0,1 accelerate launch \
   --config_file "$INFER_CONFIG" evaluate.py \
