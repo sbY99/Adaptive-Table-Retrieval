@@ -688,7 +688,6 @@ class InferenceModule:
                         input_file_path = candidate_input_path
                         break
                 inference_data = read_jsonl(input_file_path)
-                output_file_path = self.output_file_path.replace(".jsonl",f"_{data_name}_window{sliding_window}_keep{keep_table}.jsonl")
 
                 pred_dict = {}
                 for q_id, pred in zip(query_id_list, pred_list):
@@ -702,8 +701,7 @@ class InferenceModule:
                     for p in pred:
                         result_item.append(db_tables[p]) # get [db, table]. Note that 'pred' is idx values.
                     results.append(result_item)
-                write_jsonl(file_path=output_file_path, data=results)
-                write_json(file_path=output_file_path.replace(".jsonl","_performance.json"), data=val_metrics)
+                write_json(file_path=self.output_file_path.replace(".json", f"_{data_name}.json"), data=val_metrics)
                 
 
 

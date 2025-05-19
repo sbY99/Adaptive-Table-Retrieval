@@ -15,7 +15,7 @@ OOD_KEEP_TABLE=5
 experiment_id="expr1" # Your Experiments ID
 
 MODEL_BEST_CHECKPOINT_DIR="models/${experiment_id}"
-OUTPUT_FILE_PATH="results/${experiment_id}.jsonl"
+OUTPUT_FILE_PATH="results/${experiment_id}.json"
 
 mkdir -p "tmp"
 mkdir -p "models"
