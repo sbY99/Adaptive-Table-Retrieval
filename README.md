@@ -123,3 +123,13 @@ ATR achieves state-of-the-art results across multiple benchmarks:
 | **ATR (UAE)** | **99.6** | **99.4** | **98.6** | **97.1** | **75.4** | **68.7** |
 
 *Note:* The reported values may not be perfectly reproducible and might vary slightly due to factors such as the accelerate library, CUDA versions, specific GPU devices used, and other stochastic elements in the evaluation process.
+
+## Citation
+
+```bibtex
+@inproceedings{kim2026retrieve,
+  title={Retrieve Only Relevant Tables Whether Few or Many: Adaptive Table Retrieval Method},
+  author={Kim, Taehee and Yang, Seungbin and Kim, Jihwan and Choo, Jaegul}, 
+  booktitle={Findings of the Association for Computational Linguistics: ACL 2026},
+  year={2026}
+}
